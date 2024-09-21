@@ -49,3 +49,7 @@ footer a{
     border-radius: 10px;
     text-decoration: none;
 }
+
+footer p{
+    margin: 100px;
+}

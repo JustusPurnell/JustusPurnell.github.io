@@ -1,16 +1,55 @@
-
-body{
-    background-color: darkgray;
-    color: ivory;
+/* Light tan look for the background and general color scheme */
+body {
+    background-color: #f1ebe4; /* Light tan background */
+    color: #333; /* Dark gray text */
     max-width: 1200px;
     margin: 0 auto;
     width: 95%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-header, footer{
+/* Navigation Bar 
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            background-color: #fff;  
+            border-bottom: 1px solid #ccc;  
+            
+              text-decoration: none;
+                color: #333; /* Default color 
+                font-weight: bold;
+                 padding: 10px 15px; /* Add some padding to make it feel like a button 
+                    border-radius: 5px; /* Rounded corners 
+                transition: background-color 0.3s ease, color 0.3s ease;  Smooth transition 
+            
+            */
+
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff; /* White background for navigation */
+    padding: 15px;
+    border-bottom: 1px solid #ccc; /* Light gray border */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333; /* Dark gray text */
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header and Footer Styling */
+header, footer {
     text-align: center;
+    padding: 20px;
+    background-color: #f1ebe4; /* Consistent background color */
 }
 
+/* Image styling */
 img {
     display: block;
     margin-left: auto;
@@ -19,37 +58,75 @@ img {
     aspect-ratio: 1/1;
     border-radius: 10px;
     object-fit: cover;
-    object-position: top; 
+    object-position: top;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.image-row{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-.tagline{
-    text-align: center;
-}
-.center{
-    text-align: center;
-}
-nav{
+/* Align images in a row */
+.image-row {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
-footer a{
+
+/* Text alignment for sections */
+.tagline, .center {
+    text-align: center;
+}
+
+/* Footer styling */
+footer a {
     background-color: white;
     color: black;
     padding: 10px;
     border-radius: 10px;
     text-decoration: none;
 }
+main p {
+    color: #333; /* Example style: changes the text color */
+    font-size: 16px;
+    text-align: center;
+}
 
-footer p{
-    margin: 100px;
+footer p {
+    margin: 50px;
+    color: #666;
+    
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    body {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    img {
+        width: 50%; 
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 5px; 
+    }
+
+    footer p {
+        margin: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    img {
+        width: 70%; 
+    }
+
+    .image-row {
+        flex-direction: column; 
+    }
+
+    footer p {
+        margin: 10px; 
+    }
 }

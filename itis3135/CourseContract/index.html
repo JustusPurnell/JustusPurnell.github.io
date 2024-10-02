@@ -1,36 +1,182 @@
 <!DOCTYPE html>
-<html lang="eng">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Justus Purnell | ITIS3135 </title>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasper Prowler || ITIS 3135 || Course Page</title>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+
+    <!-- Embedded CSS -->
     <style>
+        /* Light tan look for the background and general color scheme */
         body {
-
-        background-color: rgb(107, 115, 115);
-        color: rgb(239, 239, 239);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        text-align: center;
-        
-        }
-        p{
-            padding-left: 120px;
-            padding-right: 120px;
+            background-color: #f1ebe4;  /* Light beige background */
+            color: #333;  /* Dark gray text */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding:0;
         }
 
-        p:first-of-type{
-            padding-top: 100px;
+         h1{
+            padding-top: 150px;
         }
-        p:last-of-type{
-            padding-top: 120px;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            background-color: #fff;
+            width: 100%;
+            height: 60px;
         }
+
+        nav a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 15px 0;
+            flex-grow: 1;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Header and Footer Styling */
+        header, footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(241, 235, 228); /* Consistent background color */
+        }
+
+        /* Image styling */
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 25%;
+            aspect-ratio: 1/1;
+            border-radius: 10px;
+            object-fit: cover;
+            object-position: top;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Align images in a row */
+        .image-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Text alignment for sections */
+        .tagline, .center {
+            text-align: center;
+        }
+
+        /* Footer styling */
+        footer a {
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        main p {
+            color: #333;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 50px;
+            color: #666;
+        }
+
+        /* Responsive styling for smaller screens */
+        @media (max-width: 768px) {
+            body {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            img {
+                width: 50%;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            footer p {
+                margin: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            img {
+                width: 70%;
+            }
+
+            .image-row {
+                flex-direction: column;
+            }
+
+            footer p {
+                margin: 10px;
+            }
+        }
+
+        div a {
+            font-size: 18px;
+            padding: 15px 20px;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin: 10px;
+           
+        }
+
+        div a:hover {
+            background-color: #555;
+        }
+
+        .stack {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
     </style>
-        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-    </head>
+</head>
 
-    <body> 
+<body>
+    <nav>
+        <a href="https://webpages.charlotte.edu/jpurnel4/itis3135/">ITIS3135</a>
+        <a href="https://github.com/JustusPurnell">GitHub</a>
+        <a href="https://justuspurnell.github.io/">GitHub.io</a> 
+        <a href="https://webpages.charlotte.edu/jpurnel4/">CLT</a>
+        <a href="https://www.linkedin.com/in/justusp">LinkedIn</a>
+    </nav>
+
+   
+    <main>
         <h1 class="center">Course Contract</h1>
-                
+        <div></div> 
         <p>
             I, Justus Purnell, agree to abide by the terms of the course contract in my Fall 2024, ITIS3135, Web Development class with my instructor, Professor D.I. von Briesen. I understand that all work that I do on publicly available online tools will be available to the world, and I will not put information there that is inappropriate for schoolwork or that I wish to keep private. I also understand that it's my work that counts for attendance, not logins or showing up for class.
         </p>
@@ -38,4 +184,21 @@
             I also understand that, given the structure and content of this class, it’s possible to find many examples online or even view my classmates’ code directly. I swear that I will only use these resources to learn and will not cut and paste code except where I have properly given credit (i.e. external libraries) and never from my classmates.
         </p>
         <p><em>Signed: Justus Purnell, 05/09/2024</em></p>
-    </body>
+
+        <p>This section contains all content related to ITIS 3135</p>
+        
+         <!--<div class="stack">
+            <a href="">View Contract</a>
+            <a href="jpsolutions.lat/index.html">Company Page</a>
+            <a href="business.html">Business Page</a>
+        </div> -->
+    </main> 
+    
+    <footer>
+        <p>Designed by JP Solutions &copy; 2024 | 
+            <em><a href="https://www.freecodecamp.org/certification/justuspurnell/responsive-web-design" target="_blank">
+            Certified in Responsive Web Design</a></em>
+        </p> 
+    </footer>
+</body>
+</html>

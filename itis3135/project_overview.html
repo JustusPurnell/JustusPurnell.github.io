@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Overview || Jasper Prowler || ITIS 3135</title>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-color: #f1ebe4;  
+            color: #333;  
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            padding-top: 50px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            margin: 20px auto;
+            width: 80%;
+            text-align: left;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            aspect-ratio: 1/1;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        main p {
+            color: #333;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 50px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                max-width: 100%;
+            }
+
+            img {
+                width: 70%;
+            }
+
+            footer p {
+                margin: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            img {
+                width: 90%;
+            }
+
+            footer p {
+                margin: 10px;
+            }
+        }
+
+        div a {
+            font-size: 18px;
+            padding: 15px 20px;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        div a:hover {
+            background-color: #555;
+        }
+
+        .stack {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .back-button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: darkblue;
+        }
+
+        @media screen and (min-width: 981px) and (max-width: 1400px) {
+    main {
+        max-width: 1100px;
+        width: 95%;
+    }
+    table {
+        width: 85%;
+    }
+        }
+
+@media screen and (min-width: 601px) and (max-width: 980px) {
+    main {
+        max-width: 90%;
+        width: 100%;
+    }
+    table {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        width: 95%;
+    }
+    table {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div data-include="components/header.html"></div>
+        <h1>Justus Purnell | ITIS3135</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Project Overview</h2>
+            <p>This website is being created for a local tattoo shop called Tattoo Supreme to enhance customer interactions. It will allow users to book appointments, view a gallery of tattoo work, and learn more about the shop's artists.</p>
+
+            <h3>Intended Users</h3>
+            <ul>
+                <li>Potential customers looking to book a tattoo session.</li>
+                <li>Returning customers who want to interact with the shop.</li>
+            </ul>
+
+            <h3>Content Overview</h3>
+            <ul>
+                <li>Home Page: Introduction to the shop, showcasing the latest tattoo work.</li>
+                <li>Artists: Profiles of tattoo artists with their specialties and galleries.</li>
+                <li>Gallery: A portfolio of tattoos done by the shop.</li>
+                <li>Booking: Appointment form for users to book sessions.</li>
+                <li>Contact: Information about how to reach the shop.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Client Information</h2>
+            <ul>
+                <li>Name: Milton Purnell</li>
+                <li>Business: Tattoo Supreme</li>
+                <li>Email: tattoosupreme@yahoo.com</li>
+                <li>Phone: 919-624-1413</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Wireframe</h2>
+            <figure>
+                <img src="images/wireframe.drawio.png" alt="Wireframe of Tattoo Shop Website">
+                <figcaption>Wireframe of the Tattoo Shop Website's Home Page</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Site Map</h2>
+            <figure>
+                <a href="https://drive.google.com/file/d/1QA6h1cL2m2PGk3R6I3EJ3MyQC_3Igc3g/view?usp=sharing" target="_blank">
+                    <img src="images/sitemap.png" alt="Site Map of the Tattoo Shop Website">
+                </a>
+                <figcaption>Site Map of the Tattoo Shop Website</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Dynamic Features</h2>
+            <p>This website will include some cool features like:</p>
+            <ul>
+                <li>A booking form that lets people pick their date, favorite artist, and tattoo style.</li>
+                <li>A gallery where users can click on tattoo images to make them bigger and see more details.</li>
+                <li>A contact form that checks if the info entered (like name, email, and phone) is correct as you type.</li>
+            </ul>
+            
+            <h3>Why It’s Needed</h3>
+            <p>These features will make the website more fun and easy to use, so booking appointments is simple and the tattoo gallery is more interactive.</p>
+        
+            <h3>Example Websites</h3>
+            <ul>
+                <li><a href="https://www.tattoodo.com" target="_blank">Tattoodo - Cool Tattoo Gallery</a></li>
+                <li><a href="https://www.styleseat.com" target="_blank">StyleSeat - Easy Appointment Booking</a></li>
+            </ul>
+        </section>
+        
+        
+    </main>
+
+    <footer>
+        <p>Designed by JP Solutions &copy; 2024 | 
+            <em><a href="https://www.freecodecamp.org/certification/justuspurnell/responsive-web-design" target="_blank">Certified in Responsive Web Design</a></em>
+            <div data-include="components/footer.html"></div>
+        </p> 
+    </footer>
+    <script src="scripts/include.js"> </script>
+</body>
+</html>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     <title>JP Solutions</title>
     <style>
         body {
@@ -55,7 +56,7 @@
             font-weight: bold;
         }
 
-        header {
+        header  {
             padding: 50px 15px;
             text-align: center;
             background-color: #f1ebe4;
@@ -67,7 +68,7 @@
             vertical-align: middle;
         }
 
-        header h1 {
+        header {
             display: inline;
             font-size: 2.5em;
             margin-left: 15px;
@@ -147,21 +148,60 @@ ul li::before {
     left: 0;
     top: 0;
 }
+  .back-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
 
+  .back-button:hover {
+    background-color: darkblue;
+  }
+
+
+@media screen and (min-width: 981px) and (max-width: 1400px) {
+    main {
+        max-width: 1100px;
+        width: 95%;
+    }
+    table {
+        width: 85%;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 980px) {
+    main {
+        max-width: 90%;
+        width: 100%;
+    }
+    table {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        width: 95%;
+    }
+    table {
+        width: 100%;
+    }
+}
     </style>
 </head>
 <body>
     <nav>
-               
-        <a href="https://webpages.charlotte.edu/jpurnel4/itis3135/">ITIS3135</a>
-        <a href="https://github.com/JustusPurnell">GitHub</a>
-        <a href="https://justuspurnell.github.io/">GitHub.io</a> 
-        <a href="https://webpages.charlotte.edu/jpurnel4/">CLT</a>
-        <a href="https://www.linkedin.com/in/justusp">LinkedIn</a>
+        <div data-include="components/header.html"></div>
+
 </nav>
 
     <header>
-        <img src="images/JPSolutions.webp" alt="JP Solutions Logo">
+        <img src="jpsolutions.lat/images/JPSolutions.webp" alt="JP Solutions Logo">
         <h1>JP Solutions</h1>
     </header>
 
@@ -185,11 +225,16 @@ ul li::before {
             <p>Email: jpurnel4@uncc.edu</p>
             <p>Phone: (984) 332-8570</p>
         </div>
+
+        
+
     </main>
 
     <footer>
+        <div data-include="components/footer.html"></div>
         <p>JP Solutions &copy; 2024 - Bringing Your Vision to Life</p>
     </footer>
-
+    <script src="scripts/include.js"> </script>
+    
 </body>
 </html>

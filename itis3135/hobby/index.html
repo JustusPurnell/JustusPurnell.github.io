@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Midterm Project | NBA 2K</title>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
     <style>
      body {
     background-color: #f1ebe4; 
@@ -104,21 +106,15 @@ th, td {
     <header>
         <h1>Midterm Project | NBA 2K</h1>
         <nav>
-            
-            <a href="#" onclick="showSection('what')">Home</a> |
-            
-            <a href="#" onclick="showSection('who')">About Me</a> |
-            
-            <a href="#" onclick="showSection('when')">Content Creation</a> |
-          
-            <a href="#" onclick="showSection('where')">Gaming Setup</a> |
-           
-            <a href="#" onclick="showSection('how')">Gameplay Tips</a> |
-            
-            <a href="#" onclick="showSection('why')">Why I Play</a> |
-           
-            <a href="#" onclick="showSection('ai-prompts')">AI Prompts</a>
+            <a href="#" id="linkhome">Home</a> |
+            <a href="#" id="linkabout">About Me</a> |
+            <a href="#" id="linkcontent">Content Creation</a> |
+            <a href="#" id="linksetup">Gaming Setup</a> |
+            <a href="#" id="linktips">Gameplay Tips</a> |
+            <a href="#" id="linkwhy">Why I Play</a> |
+            <a href="#" id="linkai">AI Prompts</a>
         </nav>
+        
     </header>
 
     <main>
@@ -173,7 +169,7 @@ th, td {
                   
                     <tr><td>Wednesday</td><td>Live Streaming</td></tr>
                   
-                    <tr><td>Friday</td><td>Tips & Tricks Video</td></tr>
+                    <tr><td>Friday</td><td>Tips and Tricks Video</td></tr>
                
                 </table>
            
@@ -281,7 +277,10 @@ th, td {
     <script>
         function showSection(sectionId) {
           
-            document.querySelectorAll("section").forEach(section => section.style.display = "none");
+            document.querySelectorAll("section").forEach((section) => {
+    section.style.display = "none";
+});
+
           
           
           

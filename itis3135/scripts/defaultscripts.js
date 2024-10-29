@@ -8,14 +8,14 @@ function displayMessage(text) {
 
 
 function jaguarGrowl() {
-    displayMessage("Grrrr! The Jaguar Growl intimidates nearby cars!");
+    displayMessage("The Jaguar Growl");
 }
 
 
 function nightVisionMode() {
     document.body.style.backgroundColor = "#333";
     document.body.style.color = "#00FF00";
-    displayMessage("Night Vision Mode activated! See through the dark like a Jaguar.");
+    displayMessage("Night Vision Mode activated");
 }
 
 function pawPrintStamp() {
@@ -27,7 +27,7 @@ function pawPrintStamp() {
     pawPrint.style.top = `${Math.random() * window.innerHeight}px`;
     pawPrint.style.left = `${Math.random() * window.innerWidth}px`;
     document.body.appendChild(pawPrint);
-    displayMessage("A paw print stamp was added!");
+    displayMessage("paw print stamp");
 }
 
 function customizeProwl() {
@@ -37,7 +37,7 @@ function customizeProwl() {
     messageElement.className = "custom-message";
     messageElement.style.textAlign = "center";
     document.body.appendChild(messageElement);
-    displayMessage("Custom prowl message added!");
+    displayMessage("Custom prowl message");
 }
 
 function resetPage() {
@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function displayGreeting() {
     const name = document.getElementById("username").value;
     const mood = document.getElementById("mood").value;
-    const companyName = "Jaguar Polish Detailing";
-    const message = `The ${companyName} welcomes you, ${name}! We're glad you are doing ${mood}.`;
+    const companyName = "Jaguar Polish Detailing Team";
+    const message = `The ${companyName} welcomes you ${name}! You're feeling ${mood}.`;
     document.getElementById("greetingmessage").textContent = message;
 }
 function displayPolygon() {

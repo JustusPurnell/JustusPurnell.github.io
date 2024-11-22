@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow Gallery - Justus Purnell</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: rgb(241, 235, 228);
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .slide {
+            display: none;
+            position: relative;
+        }
+
+        .slide img {
+            width: 200px;
+            height: auto;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 8px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 8px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            width: 15px;
+            height: 15px;
+            margin: 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div data-include="components/header.html"></div>
+    </header>
+    <main>
+        <h2>Slideshow Gallery</h2>
+        <p>A slideshow of items starting with each letter in the name <strong>Justus Purnell</strong>.</p>
+        <div class="slideshow-container">
+
+            <div class="slide">
+                <img src="images/yes.jpg" alt="J - for Jar">
+                <p class="caption">J - for Jar</p>
+            </div>
+            <div class="slide">
+                <img src="images/umbrella.jpeg" alt="U - for Umbrella">
+                <p class="caption">U - for Umbrella</p>
+            </div>
+            <div class="slide">
+                <img src="images/ship.jpeg" alt="S - for Sunflower">
+                <p class="caption">S - for Sunflower</p>
+            </div>
+            <div class="slide">
+                <img src="images/tree.png" alt="T - for Tree">
+                <p class="caption">T - for Tree</p>
+            </div>
+            <div class="slide">
+                <img src="images/ukele.jpeg" alt="U - for Unicorn">
+                <p class="caption">U - for Unicorn</p>
+            </div>
+            <div class="slide">
+                <img src="images/sunflower.jpeg" alt="S - for Ship">
+                <p class="caption">S - for Ship</p>
+            </div>
+            <div class="slide">
+                <img src="images/paintbrush.png" alt="P - for Paintbrush">
+                <p class="caption">P - for Paintbrush</p>
+            </div>
+            <div class="slide">
+                <img src="images/unicorn.png" alt="U - for Ukulele">
+                <p class="caption">U - for Ukulele</p>
+            </div>
+            <div class="slide">
+                <img src="images/rocket png.png" alt="R - for Rocket">
+                <p class="caption">R - for Rocket</p>
+            </div>
+            <div class="slide">
+                <img src="images/notebook.jpg" alt="N - for Notebook">
+                <p class="caption">N - for Notebook</p>
+            </div>
+            <div class="slide">
+                <img src="images/elephjent.png" alt="E - for Elephant">
+                <p class="caption">E - for Elephant</p>
+            </div>
+            <div class="slide">
+                <img src="images/lemon.png" alt="L - for Lighthouse">
+                <p class="caption">L - for Lighthouse</p>
+            </div>
+            <div class="slide">
+                <img src="images/lighthouse.png" alt="L - for Lemon">
+                <p class="caption">L - for Lemon</p>
+            </div>
+        </div>
+
+    
+        <div class="dots">
+            <span class="dot" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
+            <span class="dot" data-slide="5"></span>
+            <span class="dot" data-slide="6"></span>
+            <span class="dot" data-slide="7"></span>
+            <span class="dot" data-slide="8"></span>
+            <span class="dot" data-slide="9"></span>
+            <span class="dot" data-slide="10"></span>
+            <span class="dot" data-slide="11"></span>
+            <span class="dot" data-slide="12"></span>
+        </div>
+        <footer>
+            <div data-include="components/footer.html"></div>
+    </footer>
+    <script src="scripts/include.js"> </script>
+    <script>
+        document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + window.location.href);
+        document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/check/referer?uri=" + window.location.href);
+    </script>
+    </main>
+    <script>
+        $(document).ready(function () {
+            let currentSlide = 0;
+            const slides = $(".slide");
+            const dots = $(".dot");
+
+            function showSlide(index) {
+                slides.hide();
+                dots.removeClass("active");
+                $(slides[index]).show();
+                $(dots[index]).addClass("active");
+            }
+
+
+            showSlide(currentSlide);
+
+
+            dots.on("click", function () {
+                currentSlide = $(this).data("slide");
+                showSlide(currentSlide);
+            });
+
+
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

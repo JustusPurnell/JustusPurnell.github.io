@@ -1,190 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BYO Intro || Justus A. Purnell || ITIS 3135</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/survey.js" defer></script>
+    <title>BYO Intro</title>
+    <script defer src="scripts/survey.js"></script>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     <style>
+        h3, h2 {
+            text-align: center;
+        }
         body {
-            background-color: #f1ebe4;  
-            color: #333;  
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: rgb(241, 235, 228);
+            color: #333;
             margin: 0;
             padding: 0;
         }
-
-        header {
-            background-color: #333;
-            color: #f1ebe4;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2, h3 {
-            text-align: center;
-            color: #333;
-        }
-
         form {
-            margin-top: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
+        form label {
             font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
         }
+        form input[type="text"], form input[type="file"], form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box; 
+}
 
-        input[type="text"], textarea, input[type="file"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        input[type="submit"], input[type="reset"], button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
+        form input[type="checkbox"] {
             margin-right: 10px;
         }
-
-        input[type="submit"]:hover, input[type="reset"]:hover, button:hover {
+        form input[type="submit"], form input[type="reset"], button {
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form input[type="submit"]:hover, form input[type="reset"]:hover, button:hover {
             background-color: #555;
         }
-
-        .services {
+        #course-container {
+            margin-bottom: 15px;
+        }
+        .course-entry {
             display: flex;
-            flex-direction: column;
-            gap: 20px;
+            align-items: center;
+            margin-bottom: 8px;
         }
-
-        .services input {
-            width: calc(100% - 50px);
+        .course-entry input {
+            flex: 1;
+            margin-right: 8px;
         }
-
-        footer {
-            background-color: #333;
-            color: #f1ebe4;
-            padding: 10px 0;
-            text-align: center;
+        .course-entry button {
+            padding: 5px 10px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 3px;
         }
-
-        footer a {
-            color: #f1ebe4;
-            text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        #result {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .deleteCourse {
-            background-color: #ff6666;
-            margin-left: 10px;
-            border-radius: 5px;
-        }
-
-        .deleteCourse:hover {
-            background-color: #ff4d4d;
+        .course-entry button:hover {
+            background-color: #e5533e;
         }
     </style>
 </head>
-
 <body>
     <header>
         <div data-include="components/header.html"></div>
-        <h1>BYO Intro</h1>
+        <h2 id="intro-title">BYO Intro</h2>
+        <h3 id="intro-text">Time to BYO Intro page, please fill out the form below so we can create your own page.</h3>
     </header>
-
+    
     <main>
-        <h2>Time to Build Your Own Intro</h2>
-        <h3>Fill out the form below, and we’ll create your custom introduction page!</h3>
+        <form id="byo-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-        <form id="introForm">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
+            <label for="mascot">Mascot:</label>
+            <input type="text" id="mascot" name="mascot" required>
 
-            <label for="mascot">Mascot:</label><br>
-            <input type="text" id="mascot" name="mascot" placeholder="Your Mascot" required><br><br>
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept=".png, .jpg" required>
 
-            <label for="image">Upload Image:</label><br>
-            <input type="file" id="image" name="image" accept=".png, .jpg" required><br><br>
+            <label for="image-caption">Image Caption:</label>
+            <input type="text" id="image-caption" name="image-caption" required>
 
-            <label for="imageCaption">Image Caption:</label><br>
-            <input type="text" id="imageCaption" name="imageCaption" placeholder="Caption for the Image" required><br><br>
+            <label for="personal-background">Personal Background:</label>
+            <textarea id="personal-background" name="personal-background" required></textarea>
 
-            <label for="personalBackground">Personal Background:</label><br>
-            <textarea id="personalBackground" name="personalBackground" required></textarea><br><br>
+            <label for="professional-background">Professional Background:</label>
+            <textarea id="professional-background" name="professional-background" required></textarea>
 
-            <label for="professionalBackground">Professional Background:</label><br>
-            <textarea id="professionalBackground" name="professionalBackground" required></textarea><br><br>
+            <label for="academic-background">Academic Background:</label>
+            <textarea id="academic-background" name="academic-background" required></textarea>
 
-            <label for="academicBackground">Academic Background:</label><br>
-            <textarea id="academicBackground" name="academicBackground" required></textarea><br><br>
+            <label for="web-background">Background in Web Development:</label>
+            <textarea id="web-background" name="web-background" required></textarea>
 
-            <label for="webDevelopmentBackground">Background in Web Development:</label><br>
-            <textarea id="webDevelopmentBackground" name="webDevelopmentBackground" required></textarea><br><br>
+            <label for="platform">Primary Computer Platform:</label>
+            <input type="text" id="platform" name="platform" required>
 
-            <label for="primaryPlatform">Primary Computer Platform:</label><br>
-            <input type="text" id="primaryPlatform" name="primaryPlatform" placeholder="e.g., Windows, MacOS" required><br><br>
-
-            <label>Courses Currently Taking:</label><br>
-            <div id="coursesContainer">
-                <input type="text" name="courses" placeholder="Enter a course">
+            <label for="courses">Courses Currently Taking:</label>
+            <div id="course-container">
+                <div class="course-entry">
+                    <input type="text" name="course" placeholder="Enter course name" required>
+                    <button type="button" class="delete-course">Delete</button>
+                </div>
             </div>
-            <button type="button" id="addCourse">Add Course</button><br><br>
+            <button type="button" id="add-course">Add Course</button>
 
-            <label for="funnyThing">Funny Thing About You:</label><br>
-            <textarea id="funnyThing" name="funnyThing"></textarea><br><br>
+            <label for="funny-thing">Funny Thing?</label>
+            <input type="text" id="funny-thing" name="funny-thing">
 
-            <label for="anythingElse">Anything Else:</label><br>
-            <textarea id="anythingElse" name="anythingElse"></textarea><br><br>
+            <label for="anything-else">Anything Else?</label>
+            <input type="text" id="anything-else" name="anything-else">
 
-            <label>
-                <input type="checkbox" id="agree" name="agree" required>
-                I understand that this information will be publicly available.
-            </label><br><br>
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree">I understand that what is on this page is not password protected and I will not put anything here that I don’t want publicly available.</label>
 
             <input type="submit" value="Submit">
             <input type="reset" value="Reset">
         </form>
-
-        <div id="result" style="display: none;"></div>
     </main>
-
     <footer>
-        <div data-include="components/footer.html"></div>
+        <footer>
+            <div data-include="components/footer.html"></div>
     </footer>
+    <script src="scripts/include.js"> </script>
+    </footer>
+    <script>
+        document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + window.location.href);
+        document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/check/referer?uri=" + window.location.href);
+    </script>
 </body>
 </html>

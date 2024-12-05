@@ -100,6 +100,7 @@ p {
     margin: 20px auto;
     padding: 20px;
     max-width: 1200px;
+    
 }
 
 .service-item {
@@ -123,7 +124,6 @@ p {
 
 
 
-
 footer {
     background-color: #1c1c1c;
     padding: 10px;
@@ -139,5 +139,14 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+#piercing-image {
+    max-width: 100%; /* Ensures the image scales properly */
+    height: auto; /* Maintains aspect ratio */
+    transition: opacity 1s ease-in-out; /* Smooth transition effect */
+    display: block;
+    margin: 0 auto;
+}
+
 
 

@@ -129,3 +129,15 @@ footer a:hover {
     color: #ccc;
 }
 
+.artist-gallery img {
+    width: 45%; 
+    height: auto; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions for both scale and opacity */
+}
+
+.artist-gallery img:hover {
+    transform: scale(1.15); /* Slightly larger hover effect for more interactivity */
+    opacity: 1; /* Ensure hover always brings full focus */
+}

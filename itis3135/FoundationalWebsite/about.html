@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles/aboutstyles.css">
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
     <header>
         <h1>Tattoo Supreme</h1>
@@ -25,32 +24,50 @@
     <main>
         <h2>About Us</h2>
         <p>
-            Welcome to <strong>Tattoo Supreme!</strong> We create custom tattoos and provide top quality work in a clean, comfortable space.
+            Welcome to <strong>Tattoo Supreme!</strong> We create custom tattoos and provide top-quality work in a clean, comfortable space.
         </p>
 
-     
         <div class="artist-gallery">
             <img src="Images/IMG_1843.png" alt="Artist 1">
             <img src="Images/IMG_1844.png" alt="Artist 2">
         </div>
-        <br>
-        <br>
 
-
-<div class="artist-story">
-    <h3>Father And Daughter Duo</h3>
-    <p>
-        Tattoo Supreme is proudly run by Milton and Alcenia Purnell, a talented fatherdaughter team. 
-        Milton, with over 20 years of experience, brings expertise in traditional and realistic tattoo styles, 
-        while Alcenia adds a modern touch with her creative designs and bold colors. 
-        Together, they create a unique and captivating tattoo experience for their clients.
-    </p>
-</div>
-        
+        <div class="artist-story">
+            <h3>Father And Daughter Duo</h3>
+            <p>
+                Tattoo Supreme is proudly run by Milton and Alcenia Purnell, a talented father-daughter team. 
+                Milton, with over 20 years of experience, brings expertise in traditional and realistic tattoo styles, 
+                while Alcenia adds a modern touch with her creative designs and bold colors. 
+                Together, they create a unique and captivating tattoo experience for their clients.
+            </p>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2024 Tattoo Supreme | <a href="https://validator.w3.org/">HTML Validation</a> | <a href="https://jigsaw.w3.org/css-validator/">CSS Validation</a></p>
     </footer>
+
+
+    <script>
+        const images = document.querySelectorAll('.artist-gallery img');
+        let currentImageIndex = 0;
+
+        function spotlightEffect() {
+    
+            images.forEach((img, index) => {
+                img.style.opacity = index === currentImageIndex ? '1' : '0.5';
+                img.style.transform = index === currentImageIndex ? 'scale(1.1)' : 'scale(1)';
+            });
+
+
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+
+
+        setInterval(spotlightEffect, 3000);
+
+
+        spotlightEffect();
+    </script>
 </body>
 </html>

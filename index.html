@@ -6,8 +6,74 @@
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     <title>Justus Purnell | ITIS3135</title>
     <style>
+
+header .nav-buttons {
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: center; /* Center the buttons */
+    gap: 20px; /* Add consistent spacing between buttons */
+    padding: 20px; /* Add space around the buttons */
+    background-color: #f5f5f5; /* Match background color */
+    
+}
+
+header .hbtn {
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px 15px;
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Button text color */
+    border: 2px solid transparent; /* Transparent border for hover effect */
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+.button-container {
+    margin-left: 100px; /* Moves the entire button group to the right */
+    margin-top: 40px;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid #ffcc00; /* Yellow border */
+}
+
+/* Filled button (with background) */
+.btn-filled {
+    background-color: #ffcc00; /* Yellow fill */
+    color: #fff; /* White text */
+}
+
+.btn-filled:hover {
+    background-color: #e6b800; /* Slightly darker yellow on hover */
+    border-color: #e6b800; /* Match the hover color */
+}
+
+/* Outlined button (transparent background) */
+.btn-outlined {
+    background-color: transparent;
+    color: #ffcc00; /* Yellow text */
+}
+
+.btn-outlined:hover {
+    background-color: #ffcc00; /* Yellow fill on hover */
+    color: #fff; /* White text on hover */
+}
+
+
+        .bio h2{
+            font-size: 70px;
+            margin-left: 100px;
+        }
+        .bio p{
+            margin-left: 100px;
+        }
         body {
-            background-color: #f1ebe4;  
+            background-color: #f5f5f5;  
             color: #333;  
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -17,7 +83,7 @@
         header {
 
             text-align: center;
-            background-color: #f1ebe4;
+            background-color: #f5f5f5;
         }
 
 
@@ -28,10 +94,12 @@
         }
 
         main {
-            display: flex;
-            justify-content: space-between;
-            padding: 50px;
-        }
+    display: flex;
+    justify-content: flex-start;
+    gap: 50px; 
+    padding: 50px;
+}
+
 
         .bio {
             flex: 1;
@@ -45,11 +113,15 @@
         }
 
         .headshot {
-            flex: 1;
-            max-width: 40%;
-            border: 2px solid #ccc;
-            border-radius: 10px;
-        }
+    max-width: 26%; /* Image size */
+    border: 2px solid #ccc; /* Light gray border */
+    border-radius: 10px; /* Rounded corners */
+    margin-left: 150px; /* Positioning */
+    padding: 10px; /* Space between the image and the border */
+    background-color: #fff; /* White background box */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: block; /* Ensures the image behaves properly in layouts */
+}
 
         footer {
             text-align: center;
@@ -68,16 +140,24 @@
 
 <body>
     <header>
-        <h1>Justus Purnell</h1>
-        <p>Class of 2027 | Computer Science | UNC Charlotte</p>
+        <div class="nav-buttons">
+            <a href="index.html" class="hbtn">Home</a>
+            <a href="#about" class="hbtn">About Me</a>
+            <a href="#projects" class="hbtn">Projects</a>
+        </div>
     </header>
 
     <main>
         <div class="bio">
-            <h2>About Me</h2>
-            <p>I'm a student passionate about learning new technologies, with a focus on expanding my skills in cybersecurity.</p>
+            <h2>Justus Purnell</h2>
+            <p>I’m a junior at UNC Charlotte, majoring in Computer Science. I’m focused on building skills and expertise to enter the cybersecurity field.</p>
+            <div class="button-container">
+            <a href="pdfs/2025 Resume Updated.pdf" class="btn btn-filled" target="_blank">View Resume</a>
+            <a href="pdfs/Unofficial Transcript.pdf" class="btn btn-outlined" target="_blank">View Transcript</a>
+            </div>
         </div>
         <img class="headshot" src="itis3135/images/headshot.jpg" alt="Justus Purnell">
+        
     </main>
 
     <footer>
@@ -85,9 +165,7 @@
                 <a href="https://github.com/JustusPurnell">Github</a>
                 <a href="https://JustusPurnell.github.io">Github Pages</a>
                 <a href="https://webpages.uncc.edu/jpurnel4/">University Webpage</a>
-                <a href="itis3135/index.html">ITIS3135</a>
                 <a href="https://www.freecodecamp.org/JustusPurnell">FreeCodeCamp</a>
-                <a href="https://www.codecademy.com/profiles/JustusPurnell">Codecademy</a>
                 <a href="https://www.linkedin.com/in/justusp/">LinkedIn</a>
             </nav>
             <p>Page Built by <a href="/itis3135/jpsolutions.html">© 2024 JP Solutions. All rights reserved.</a>&copy; 2024</p>

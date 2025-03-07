@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: url('images/camaro2.jpeg') no-repeat center center/cover;
+            height: 100vh;
+            position: relative;
+        }
+        
+        /* Background overlay for better readability */
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5); /* Darkens the background */
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .nav-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 3;
+        }
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background: transparent;
+        }
+        .nav-links li {
+            margin: 0 30px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px black;
+        }
+        
+         /* Mobile Styles */
+         @media (max-width: 768px) {
+    .menu-button {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 15px;
+        border-radius: 5px;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    /* Center Content on Mobile */
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Ensures everything is centered */
+        text-align: center;
+        justify-content: center;
+        padding: 20px;
+        height: 100vh;
+    }
+
+    .main-content h1 {
+        font-size: 28px; /* Adjusted for mobile */
+        font-weight: 300;
+        max-width: 90%;
+        line-height: 1.2;
+        margin-bottom: 15px; /* Added spacing below H1 */
+    }
+
+    .quote-button {
+        padding: 12px 25px;
+        font-size: 16px;
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        border-radius: 5px;
+        margin-top: 0; /* Remove extra spacing */
+    }
+}
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            text-align: left;
+            font-size: 24px;
+            padding-left: 80px;
+            position: relative;
+            z-index: 2;
+        }
+        .main-content h1 {
+            font-size: 64px;
+            font-weight: l;
+            line-height: 1.2;
+            text-shadow: 3px 3px 5px black;
+            max-width: 600px;
+        }
+        .subtext {
+            font-size: 20px;
+            margin-top: 10px;
+            text-shadow: 2px 2px 4px black;
+        }
+        .quote-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: red;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="nav-container">
+        <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h1>
+           WE CARE ABOUT YOUR VEHICLE
+        </h1>
+        <p class="subtext">Providing mobile detailing services you can count on.</p>
+        <button class="quote-button">Get a Quote Now</button>
+    </div>
+</body>
+</html>

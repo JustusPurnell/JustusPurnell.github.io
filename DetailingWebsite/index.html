@@ -41,6 +41,7 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
+            pointer-events: none; /* Prevents interactions */
         }
 
         @media screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -191,12 +192,21 @@
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('active');
         }
+
+        // Prevent pausing on iPhone
+        document.addEventListener("DOMContentLoaded", function () {
+            let video = document.querySelector(".video-bg");
+            if (video) {
+                video.play();
+                video.controls = false; // Ensures no play/pause controls
+            }
+        });
     </script>
 </head>
 <body>
 
     <!-- Video Background (Hidden by Default, Only Shows on iPhones) -->
-    <video class="video-bg" autoplay muted loop>
+    <video class="video-bg" autoplay muted loop playsinline oncontextmenu="return false;" disablePictureInPicture>
         <source src="videos/detailvid.mp4" type="video/mp4">
     </video>
 

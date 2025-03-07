@@ -10,13 +10,14 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
         body {
             font-family: Arial, sans-serif;
             background: url('images/camaro2.jpeg') no-repeat center center/cover;
             height: 100vh;
             position: relative;
         }
-        
+
         /* Background overlay for better readability */
         body::after {
             content: "";
@@ -25,17 +26,39 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.5); /* Darkens the background */
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1;
             pointer-events: none;
         }
-        
+
+        /* Video background for iPhones */
+        .video-bg {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        @media screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+            body {
+                background: none; /* Removes the image background */
+            }
+            .video-bg {
+                display: block; /* Shows the video only on iPhones */
+            }
+        }
+
         .nav-container {
             position: absolute;
             top: 20px;
             right: 20px;
             z-index: 3;
         }
+
         .menu-button {
             display: none;
             background: none;
@@ -44,6 +67,7 @@
             color: white;
             cursor: pointer;
         }
+
         .nav-links {
             list-style: none;
             display: flex;
@@ -51,9 +75,11 @@
             align-items: center;
             background: transparent;
         }
+
         .nav-links li {
             margin: 0 30px;
         }
+
         .nav-links a {
             color: white;
             text-decoration: none;
@@ -61,61 +87,64 @@
             font-weight: bold;
             text-shadow: 3px 3px 5px black;
         }
-        
-         /* Mobile Styles */
-         @media (max-width: 768px) {
-    .menu-button {
-        display: block;
-    }
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background: rgba(0, 0, 0, 0.8);
-        padding: 15px;
-        border-radius: 5px;
-    }
-    .nav-links.active {
-        display: flex;
-    }
-    .nav-links li {
-        margin: 10px 0;
-    }
 
-    /* Center Content on Mobile */
-    .main-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Ensures everything is centered */
-        text-align: center;
-        justify-content: center;
-        padding: 20px;
-        height: 100vh;
-    }
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .menu-button {
+                display: block;
+            }
 
-    .main-content h1 {
-        font-size: 28px; /* Adjusted for mobile */
-        font-weight: 300;
-        max-width: 90%;
-        line-height: 1.2;
-        margin-bottom: 15px; /* Added spacing below H1 */
-    }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background: rgba(0, 0, 0, 0.8);
+                padding: 15px;
+                border-radius: 5px;
+            }
 
-    .quote-button {
-        padding: 12px 25px;
-        font-size: 16px;
-        background-color: red;
-        color: white;
-        font-weight: bold;
-        border: none;
-        cursor: pointer;
-        text-transform: uppercase;
-        border-radius: 5px;
-        margin-top: 0; /* Remove extra spacing */
-    }
-}
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            /* Center Content on Mobile */
+            .main-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                padding: 20px;
+                height: 100vh;
+            }
+
+            .main-content h1 {
+                font-size: 28px;
+                font-weight: 300;
+                max-width: 90%;
+                line-height: 1.2;
+                margin-bottom: 15px;
+            }
+
+            .quote-button {
+                padding: 12px 25px;
+                font-size: 16px;
+                background-color: red;
+                color: white;
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+                text-transform: uppercase;
+                border-radius: 5px;
+                margin-top: 0;
+            }
+        }
 
         .main-content {
             display: flex;
@@ -130,6 +159,7 @@
             position: relative;
             z-index: 2;
         }
+
         .main-content h1 {
             font-size: 64px;
             font-weight: l;
@@ -137,11 +167,13 @@
             text-shadow: 3px 3px 5px black;
             max-width: 600px;
         }
+
         .subtext {
             font-size: 20px;
             margin-top: 10px;
             text-shadow: 2px 2px 4px black;
         }
+
         .quote-button {
             margin-top: 20px;
             padding: 15px 30px;
@@ -162,6 +194,12 @@
     </script>
 </head>
 <body>
+
+    <!-- Video Background (Hidden by Default, Only Shows on iPhones) -->
+    <video class="video-bg" autoplay muted loop>
+        <source src="videos/detailvid.mp4" type="video/mp4">
+    </video>
+
     <div class="nav-container">
         <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
         <ul class="nav-links">
@@ -171,12 +209,12 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </div>
+
     <div class="main-content">
-        <h1>
-           WE CARE ABOUT YOUR VEHICLE
-        </h1>
+        <h1>WE CARE ABOUT YOUR VEHICLE</h1>
         <p class="subtext">Providing mobile detailing services you can count on.</p>
         <button class="quote-button">Get a Quote Now</button>
     </div>
+
 </body>
 </html>

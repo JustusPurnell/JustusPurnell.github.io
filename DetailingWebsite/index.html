@@ -129,67 +129,74 @@
             text-transform: uppercase;
             border-radius: 5px;
         }
-          /* Mobile Styles */
-          @media (max-width: 768px) {
-            .menu-button {
-                display: block;
-            }
+         /* Mobile Styles */
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+    }
 
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                background: rgba(0, 0, 0, 0.8);
-                padding: 15px;
-                border-radius: 5px;
-            }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 15px;
+        border-radius: 5px;
+    }
 
-            .nav-links.active {
-                display: flex;
-            }
+    .nav-links.active {
+        display: flex;
+    }
 
-            .nav-links li {
-                margin: 10px 0;
-            }
+    .nav-links li {
+        margin: 10px 0;
+    }
 
-            /* Center Content on Mobile */
-            .main-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                justify-content: center;
-                padding: 20px;
-                height: 100vh;
-            }
+    /* Center Content on Mobile */
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        padding: 20px;
+        height: 100vh;
+    }
 
-            .main-content h1 {
-                font-size: 40px;
-                font-weight: 300;
-                max-width: 90%;
-                line-height: 1.2;
-                margin-bottom: 15px;
-            }
+    .main-content h1 {
+        font-size: 40px;
+        font-weight: 300;
+        max-width: 90%;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
 
-            .quote-button {
-                padding: 12px 25px;
-                font-size: 16px;
-                background-color: #1D9CD6;
-                color: white;
-                font-weight: bold;
-                border: none;
-                cursor: pointer;
-                border-radius: 8px;
-                margin-top: 0;
-            }
+    .quote-button {
+        padding: 12px 25px;
+        font-size: 16px;
+        background-color: #1D9CD6;
+        color: white;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        margin-top: 0;
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2); /* Light shadow added */
+        transition: box-shadow 0.2s ease-in-out; /* Smooth effect */
+    }
 
-            .subtext {
-                font-size: 16px;
-                padding-bottom: 30px;
-            }
-        }
+    .quote-button:hover {
+        box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+    }
+
+    .subtext {
+        font-size: 16px;
+        padding-bottom: 30px;
+    }
+}
+
     </style>
     <script>
         function toggleMenu() {

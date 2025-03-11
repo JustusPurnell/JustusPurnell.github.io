@@ -138,6 +138,61 @@ header .hbtn {
             text-decoration: none;
             color: #333;
         }
+        /* --- MOBILE RESPONSIVENESS --- */
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    /* Move image to the top */
+    main {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .headshot {
+        order: -1; /* Moves image to the top */
+        max-width: 80%;
+        margin-bottom: 10px;
+    }
+
+    /* Hide the name on mobile */
+    .bio h2 {
+        display: none;
+    }
+
+    /* Center align text below the image */
+    .bio p {
+        font-size: 1rem;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Make buttons inline and centered */
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Even smaller screens (iPhones SE, etc.) */
+@media screen and (max-width: 480px) {
+    .bio p {
+        font-size: 0.9rem;
+    }
+
+    .headshot {
+        max-width: 90%;
+    }
+}
+
     </style>
 </head>
 

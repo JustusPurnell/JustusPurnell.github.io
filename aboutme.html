@@ -3,27 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="itis3135/styles/gallerystyling.css">
-    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-    <title>Justus Purnell | ITIS3135</title>
+    <title>About Me | Justus Purnell</title>
     <style>
-
-
-
-.hbtn {
-    font-size: 1rem;
+       body {
+    background-color: #f5f5f5;
+    color: #333;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 10px 15px;
-    text-decoration: none; /* Remove underline */
-    color: #333; /* Button text color */
-    border: 2px solid transparent; /* Transparent border for hover effect */
-    border-radius: 5px; /* Rounded corners */
-    transition: all 0.3s ease; /* Smooth hover effect */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+main {
+    display: flex;
+    align-items: center; /* Keeps image and text vertically aligned */
+    justify-content: center;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+}
+
+.headshot-container {
+    flex-shrink: 0;
+    margin-right: 60px;
+    position: relative;
+    left: -50px; /* Moves it more to the left */
+    top: -20px; /* Raises the image higher */
+}
+
+.headshot {
+    width: 220px;  /* Increase size */
+    height: 220px;
+    border-radius: 50%;
+    border: 8px solid #ffcc00;
+    object-fit: cover;
+    display: block;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+}
+
 .button-container {
-    margin-left: 100px; /* Moves the entire button group to the right */
-    margin-top: 40px;
+    display: flex;
+    margin-top: 20px;
 }
+
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -33,128 +72,84 @@
     text-decoration: none;
     text-align: center;
     transition: all 0.3s ease;
-    border: 2px solid #ffcc00; /* Yellow border */
+    border: 2px solid #ffcc00;
+    margin-right: 10px;
 }
 
-/* Filled button (with background) */
 .btn-filled {
-    background-color: #ffcc00; /* Yellow fill */
-    color: #fff; /* White text */
+    background-color: #ffcc00;
+    color: #fff;
 }
 
 .btn-filled:hover {
-    background-color: #e6b800; /* Slightly darker yellow on hover */
-    border-color: #e6b800; /* Match the hover color */
+    background-color: #e6b800;
+    border-color: #e6b800;
 }
 
-/* Outlined button (transparent background) */
 .btn-outlined {
     background-color: transparent;
-    color: #ffcc00; /* Yellow text */
+    color: #ffcc00;
 }
 
 .btn-outlined:hover {
-    background-color: #ffcc00; /* Yellow fill on hover */
-    color: #fff; /* White text on hover */
+    background-color: #ffcc00;
+    color: #fff;
 }
 
-
-        .bio h2{
-            font-size: 70px;
-            margin-left: 100px;
-        }
-        .bio p{
-            margin-left: 100px;
-        }
-        body {
-            background-color: #f5f5f5;  
-            color: #333;  
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-
-            text-align: center;
-            background-color: #f5f5f5;
-        }
-
-
-
-       
-
-        main {
-    display: flex;
-    justify-content: flex-start;
-    gap: 50px; 
-    padding: 50px;
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+    width: 100%;
 }
 
-
-        .bio {
-            flex: 1;
-            max-width: 50%;
-        }
-
-
-        .bio p {
-            font-size: 1.2rem;
-            color: #666;
-        }
-
-  
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background-color: #fff;
-            border-top: 1px solid #ccc;
-        }
-
-        .social-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
-        }
     </style>
 </head>
 
 <body>
     <div id="header-placeholder"></div>
 
-<script>
-    fetch('itis3135/components/header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading header:', error));
-</script>
-
+    <script>
+        fetch('components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
 
     <main>
-       
-        <div class="gallery-item">
-            <a href="https://www.instagram.com/tattoosupreme/" target="_blank">
-                <img src="itis3135/images/headshot.jpg" alt="Instagram">
-            </a>
+        <div class="headshot-container">
+            <img class="headshot" src="images/image.png" alt="Justus Purnell">
         </div>
-        
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>
+                I’m a junior at <strong>UNC Charlotte</strong>, majoring in <strong>Computer Science</strong>, with a passion for leveraging **technology, IT solutions, and business operations** in the <strong>automotive industry</strong>. My goal is to use <strong>backend systems, data analytics, and automation</strong> to drive efficiency and innovation in the sector.
+            </p>
+            <p>
+                I currently work at <strong>Hendrick Automotive Group</strong>, where I’ve gained hands-on experience in dealership operations. My experience here has deepened my understanding of the **business and technology intersection** within the automotive world.
+            </p>
+            <p>
+                In addition to my academic and professional background, I run my own <strong>mobile detailing business</strong>, which has taught me valuable lessons in **entrepreneurship, customer service, and business development**. I’m also in the process of developing a **business website**, applying my programming and web development skills to create a more efficient and scalable operation.
+            </p>
+            <p>
+                Outside of my work in tech and business, I’m passionate about <strong>fitness and social media growth</strong>. I’ve built a **social media platform with over 50,000 followers**, sharing my fitness journey and engaging with a community focused on self-improvement. This experience has given me insights into **digital branding, content marketing, and audience engagement**.
+            </p>
+
+            <div class="button-container">
+                <a href="pdfs/2025 Detailing Resume.pdf" class="btn btn-filled" target="_blank">View Resume</a>
+                <a href="pdfs/Transcript.pdf" class="btn btn-outlined" target="_blank">View Transcript</a>
+            </div>
+        </div>
     </main>
 
     <footer>
-            
-        <style>
-            footer p{
-                font-size: .8rem;
-            }
-        </style>
-        
         <p>© 2024 JP Solutions. All rights reserved.</p>
-        
     </footer>
-    <script src="itis3135/scripts/include.js"> </script>
 
+    <script src="scripts/include.js"></script>
 </body>
 </html>

@@ -338,7 +338,7 @@ input, textarea {
 
         // Prevent pausing on iPhone
         document.addEventListener("DOMContentLoaded", function () {
-            let video = document.querySelector(".video-bg");
+            let video = documenYt.querySelector(".video-bg");
             if (video) {
                 video.play();
                 video.controls = false; // Ensures no play/pause controls
@@ -354,6 +354,12 @@ input, textarea {
     function closeQuoteForm() {
         document.getElementById("quoteForm").classList.remove("show");
     }
+
+    function toggleMenu() {
+    let menu = document.querySelector('.nav-links');
+    menu.classList.toggle('active');
+}
+
     </script>
 </head>
 <body>

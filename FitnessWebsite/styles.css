@@ -1,0 +1,115 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #fff, #e6e6e6);
+    color: #222;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero-content {
+    max-width: 50%;
+    text-align: left;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.highlight {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+.red-text {
+    color: red;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* Input Field & Button */
+form {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.cta-btn {
+    background: #ffcc00;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    animation: shake 1.5s infinite;
+}
+
+.cta-btn:hover {
+    background: #e6b800;
+}
+
+/* Shake Animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+/* Countdown Timer */
+.countdown {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Hero Image */
+.hero-image img {
+    max-width: 300px;
+    border-radius: 15px;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: black;
+    color: white;
+}

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Justus Purnell</title>
     <style>
-       body {
+  body {
     background-color: #f5f5f5;
     color: #333;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,41 +20,59 @@ main {
     display: flex;
     align-items: center; /* Keeps image and text vertically aligned */
     justify-content: center;
-    max-width: 900px;
+    max-width: 1200px; /* Keeps content well-structured */
     margin: 50px auto;
     padding: 40px;
 }
 
 .headshot-container {
-    flex-shrink: 0;
-    margin-right: 60px;
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    left: -50px; /* Moves it more to the left */
-    top: -20px; /* Raises the image higher */
+
 }
 
+
 .headshot {
-    width: 220px;  /* Increase size */
-    height: 220px;
+    width: 320px;  /* Increased size */
+    height: 320px;
     border-radius: 50%;
-    border: 8px solid #ffcc00;
+    border: 10px solid #ffcc00; /* Thicker border for emphasis */
     object-fit: cover;
+    object-position: center top;
     display: block;
+    transform: translateX(-100px); /* Start off-screen to the left */
+    animation: slideInLeft 1s ease-out forwards; /* Animation applied */
+
+}
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .about-content {
-    flex: 1;
+    flex: 1; /* Text takes half the width */
+    padding-left: 40px; /* Increased spacing between image and text */
+    padding-right: 50px; /* Added right padding for better balance */
 }
 
 .about-content h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
 }
 
 .about-content p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #666;
-    line-height: 1.6;
+    line-height: 1.5;
     text-align: justify;
 }
 
@@ -127,22 +145,16 @@ footer {
         <div class="about-content">
             <h2>About Me</h2>
             <p>
-                I’m a junior at <strong>UNC Charlotte</strong>, majoring in <strong>Computer Science</strong>, with a passion for leveraging **technology, IT solutions, and business operations** in the <strong>automotive industry</strong>. My goal is to use <strong>backend systems, data analytics, and automation</strong> to drive efficiency and innovation in the sector.
+                I’m a junior at <strong>UNC Charlotte</strong>, majoring in <strong>Computer Science</strong>, with a passion for leveraging technology, IT solutions, and business operations in the <strong>automotive industry</strong>. I am eager to develop expertise in backend systems, data analytics, and automation to help drive efficiency and innovation in the sector.
+            </p>
+        
+            <p>
+                In addition to my academic and professional background, I run my own <strong>mobile detailing business</strong>, which has taught me valuable lessons in entrepreneurship, customer service, and business development. I’m also in the process of developing a business website, applying my programming and web development skills to create a more efficient and scalable operation.
             </p>
             <p>
-                I currently work at <strong>Hendrick Automotive Group</strong>, where I’ve gained hands-on experience in dealership operations. My experience here has deepened my understanding of the **business and technology intersection** within the automotive world.
-            </p>
-            <p>
-                In addition to my academic and professional background, I run my own <strong>mobile detailing business</strong>, which has taught me valuable lessons in **entrepreneurship, customer service, and business development**. I’m also in the process of developing a **business website**, applying my programming and web development skills to create a more efficient and scalable operation.
-            </p>
-            <p>
-                Outside of my work in tech and business, I’m passionate about <strong>fitness and social media growth</strong>. I’ve built a **social media platform with over 50,000 followers**, sharing my fitness journey and engaging with a community focused on self-improvement. This experience has given me insights into **digital branding, content marketing, and audience engagement**.
+                Outside of my work in tech and business, I’m passionate about <strong>fitness and social media growth</strong>. I’ve built a social media platform with over 50,000 followers, sharing my fitness journey and engaging with a community focused on self-improvement. This experience has given me insights into digital branding, content marketing, and audience engagement.
             </p>
 
-            <div class="button-container">
-                <a href="pdfs/2025 Detailing Resume.pdf" class="btn btn-filled" target="_blank">View Resume</a>
-                <a href="pdfs/Transcript.pdf" class="btn btn-outlined" target="_blank">View Transcript</a>
-            </div>
         </div>
     </main>
 

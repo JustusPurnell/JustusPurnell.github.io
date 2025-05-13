@@ -89,14 +89,12 @@
     }
 
     .service-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-    
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
     .service-card {
       background: #fff;
@@ -104,6 +102,8 @@
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
     }
 
     .service-card img {
@@ -114,6 +114,10 @@
 
     .service-card-content {
       padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
     }
 
     .service-card-content h3 {
@@ -144,6 +148,7 @@
       font-weight: bold;
       display: inline-block;
       transition: background 0.3s ease;
+      align-self: flex-start;
     }
 
     .btn:hover {
@@ -160,7 +165,6 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="book.html">Book Now</a></li>
       </ul>
     </nav>
   </div>
@@ -174,59 +178,67 @@
       <div class="service-card">
         <img src="images/camaro2.jpeg" alt="Deluxe Detail">
         <div class="service-card-content">
-          <h3>Deluxe Detail</h3>
-          <p>Starting at $300 — Full interior & exterior transformation.</p>
-          <ul>
-            <li>Exterior wash & wax</li>
-            <li>Interior shampoo</li>
-            <li>Engine bay clean</li>
-            <li>Paint enhancement</li>
-          </ul>
+          <div>
+            <h3>Deluxe Detail</h3>
+            <p>Starting at $300 — Full interior & exterior transformation.</p>
+            <ul>
+              <li>One Step Paint Enhancement</li>
+              <li>Full Exterior Hand Wash</li>
+              <li>Clay Bar Treatment</li>
+              <li>Interior Detail</li>
+            </ul>
+          </div>
           <a href="book.html" class="btn">Book Now</a>
         </div>
       </div>
 
       <!-- Standard -->
       <div class="service-card">
-        <img src="images/camaro2.jpeg" alt="Standard Detail">
+        <img src="images/truck.jpeg" alt="Standard Detail">
         <div class="service-card-content">
-          <h3>Standard Detail</h3>
-          <p>Starting at $150 — Essential clean & refresh.</p>
-          <ul>
-            <li>Exterior wash</li>
-            <li>Interior vacuum</li>
-            <li>Door jambs cleaned</li>
-          </ul>
+          <div>
+            <h3>Standard Detail</h3>
+            <p>Starting at $150 — Essential clean & refresh.</p>
+            <ul>
+              <li>Exterior wash</li>
+              <li>Interior vacuum</li>
+              <li>Door jambs cleaned</li>
+            </ul>
+          </div>
           <a href="book.html" class="btn">Book Now</a>
         </div>
       </div>
 
       <!-- Interior Only -->
       <div class="service-card">
-        <img src="images/camaro2.jpeg" alt="Interior Detail">
+        <img src="images/interior.jpeg" alt="Interior Detail">
         <div class="service-card-content">
-          <h3>Interior Only</h3>
-          <p>Starting at $100 — Deep interior cleaning.</p>
-          <ul>
-            <li>Carpet & seat shampoo</li>
-            <li>Leather conditioning</li>
-            <li>Glass cleaned</li>
-          </ul>
+          <div>
+            <h3>Interior Only</h3>
+            <p>Starting at $100 — Deep interior cleaning.</p>
+            <ul>
+              <li>Carpet & seat shampoo</li>
+              <li>Leather conditioning</li>
+              <li>Glass cleaned</li>
+            </ul>
+          </div>
           <a href="book.html" class="btn">Book Now</a>
         </div>
       </div>
 
       <!-- Maintenance Plan -->
       <div class="service-card">
-        <img src="images/camaro2.jpeg" alt="Maintenance Plan">
+        <img src="images/maintainence.jpeg" alt="Maintenance Plan">
         <div class="service-card-content">
-          <h3>Maintenance Plan</h3>
-          <p>$90/month — Ongoing upkeep & priority access.</p>
-          <ul>
-            <li>Bi-weekly quick detail</li>
-            <li>Interior wipe down</li>
-            <li>Priority scheduling</li>
-          </ul>
+          <div>
+            <h3>Maintenance Plan</h3>
+            <p>$90/month — Ongoing upkeep & priority access.</p>
+            <ul>
+              <li>Bi-weekly quick detail</li>
+              <li>Interior wipe down</li>
+              <li>Priority scheduling</li>
+            </ul>
+          </div>
           <a href="book.html" class="btn">Book Now</a>
         </div>
       </div>

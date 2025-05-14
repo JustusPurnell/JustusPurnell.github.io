@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tattoo Supreme | Raleigh Tattoo Shop</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('https://your-image-url.com/tattoo-background.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      background-color: black; /* fallback */
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5); /* overlay for readability */
+      top: 0;
+      left: 0;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Launching Soon!</h1>
+  </section>
+</body>
+</html>

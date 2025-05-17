@@ -166,5 +166,20 @@
       <a href="services.html" class="btn">Book Now</a>
     </div>
   </header>
+  <script>
+    // wait until the HTML is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+  
+      // grab the hamburger and the nav bar
+      const toggle = document.querySelector('.nav-toggle');
+      const navBar = document.querySelector('.nav');
+  
+      // when the hamburger is clicked, add/remove the .open class
+      toggle.addEventListener('click', () => {
+        navBar.classList.toggle('open');
+      });
+    });
+  </script>
+  
 </body>
 </html>

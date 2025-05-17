@@ -2,164 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | Charlotte Mobile Car Detailing</title>
   <meta name="description" content="Explore our car detailing service packages in Charlotte, NC." />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --clr-primary: #1181ff;
-      --clr-accent: #ffc400;
-      --clr-dark: #1e1f22;
-      --clr-light: #ffffff;
-      --clr-overlay: rgba(0, 0, 0, 0.66);
+    :root{
+      --clr-primary:#1181ff;
+      --clr-accent:#ffc400;
+      --clr-dark:#1e1f22;
+      --clr-light:#ffffff;
+      --clr-overlay:rgba(0,0,0,.66);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{font-family:'Inter',sans-serif;background:var(--clr-dark);color:var(--clr-light);}
+    a{text-decoration:none;color:inherit;}
+
+    /* ---------- SHARED NAV BAR (copied from home) ---------- */
+    .nav{
+      position:relative;height:64px;padding:0 2rem;
+      display:flex;align-items:center;justify-content:center;
+      background:var(--clr-dark);z-index:10;
+    }
+    .logo{position:absolute;left:1rem;top:50%;transform:translateY(-50%);}
+    .logo img{height:120px;width:auto;}
+
+    .nav__links{
+      list-style:none;display:flex;gap:2.5rem;font-weight:500;
+      font-size:1rem;letter-spacing:.8px;
+    }
+    .nav__links li a{position:relative;color:#fff;transition:.3s;}
+    .nav__links li a::after{
+      content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;
+      background:var(--clr-accent);transition:.3s;
+    }
+    .nav__links li a:hover::after{width:100%;}
+
+    /* call buttons */
+    .call-btn{
+      position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+      display:flex;align-items:center;gap:.35rem;border-radius:40px;
+      border:1px solid rgba(255,255,255,.85);backdrop-filter:blur(4px);
+      font-weight:600;color:#fff;background:transparent;
+      transition:background .3s ease,color .3s ease;
+    }
+    .call-btn:hover{background:#fff;color:#1e1f22;}
+    .call-desktop{padding:.5rem 1rem;font-size:.9rem;}
+    .call-mobile{display:none;padding:.55rem;width:46px;height:46px;justify-content:center;}
+    .call-mobile svg{margin:0;}
+
+    /* hamburger */
+    .nav-toggle{
+      display:none;background:none;border:none;cursor:pointer;color:#fff;
+      position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+      z-index:120;
+    }
+    /* lines animate into X */
+    .nav.open .nav-toggle line:nth-child(1){transform:translateY(6px) rotate(45deg);}
+    .nav.open .nav-toggle line:nth-child(2){opacity:0;}
+    .nav.open .nav-toggle line:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+    .nav-toggle line{transition:.25s ease;}
+
+    /* ---------- MOBILE DROPDOWN ---------- */
+    @media (max-width:600px){
+
+      .logo img{height:60px;}
+
+      /* show hamburger / icon, hide pill */
+      .nav-toggle{display:block;}
+      .call-desktop{display:none;}
+      .call-mobile{display:flex;right:3.5rem;}
+
+      /* menu panel */
+      .nav__links{
+        flex-direction:column;gap:1.25rem;position:absolute;left:0;right:0;top:0;
+        padding:80px 2rem 2rem;background:rgba(28,29,32,.95);
+        transform:translateY(-120%);opacity:0;transition:transform .35s,opacity .35s;
+        text-align:center;z-index:99;
+      }
+      .nav.open .nav__links{transform:translateY(0);opacity:1;}
+      .nav__links li a::after{display:none;}
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* ---------- SERVICES PAGE STYLES (unchanged) ---------- */
+    .services{padding:4rem 2rem;max-width:1200px;margin:auto;}
+    .services h2{text-align:center;font-size:2.8rem;margin-bottom:3rem;font-family:'Anton',sans-serif;}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--clr-dark);
-      color: var(--clr-light);
-    }
+    .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;max-width:1000px;margin:0 auto;}
+    .service-card{background:#fff;color:#1e1f22;border-radius:12px;overflow:hidden;
+                  box-shadow:0 4px 12px rgba(0,0,0,0.1);display:flex;flex-direction:column;}
+    .service-card img{width:100%;height:200px;object-fit:cover;}
+    .service-card-content{padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;flex-grow:1;}
+    .service-card-content h3{margin-bottom:.5rem;}
+    .service-card-content p{margin-bottom:1rem;color:#444;}
+    .service-card-content ul{margin-bottom:1rem;padding-left:1rem;}
+    .service-card-content ul li{list-style:disc;margin-bottom:.5rem;}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: var(--clr-dark);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .nav__links {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 1rem;
-      letter-spacing: 0.8px;
-    }
-
-    .nav__links li a {
-      position: relative;
-      color: white;
-      transition: color 0.3s ease;
-    }
-
-    .nav__links li a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 2px;
-      background: var(--clr-accent);
-      transition: width 0.3s ease;
-    }
-
-    .nav__links li a:hover::after {
-      width: 100%;
-    }
-
-    .services {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .services h2 {
-      text-align: center;
-      font-size: 2.8rem;
-      margin-bottom: 3rem;
-      font-family: 'Anton', sans-serif;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .service-card {
-      background: #fff;
-      color: #1e1f22;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .service-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .service-card-content {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex-grow: 1;
-    }
-
-    .service-card-content h3 {
-      margin-bottom: 0.5rem;
-    }
-
-    .service-card-content p {
-      margin-bottom: 1rem;
-      color: #444;
-    }
-
-    .service-card-content ul {
-      margin-bottom: 1rem;
-      padding-left: 1rem;
-    }
-
-    .service-card-content ul li {
-      list-style: disc;
-      margin-bottom: 0.5rem;
-    }
-
-    .btn {
-      background-color: #e63946;
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      display: inline-block;
-      transition: background 0.3s ease;
-      align-self: flex-start;
-    }
-
-    .btn:hover {
-      background-color: #ff4d4d;
-    }
+    .btn{background:#e63946;color:#fff;padding:.6rem 1.2rem;border:none;border-radius:5px;font-weight:bold;display:inline-block;transition:background .3s;}
+    .btn:hover{background:#ff4d4d;}
   </style>
 </head>
 
 <body>
-  <!-- Navbar -->
+
+  <!-- ---------- HEADER / NAV (identical to home) ---------- -->
   <div class="nav">
+    <!-- logo -->
+    <a href="home.html" class="logo"><img src="images/detaillogo.png" alt="We Detail NC logo"></a>
+
+    <!-- hamburger -->
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <line x1="3" y1="6"  x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- links -->
     <nav>
       <ul class="nav__links">
         <li><a href="home.html">Home</a></li>
@@ -168,13 +131,38 @@
         <li><a href="testimonials.html">Testimonials</a></li>
       </ul>
     </nav>
+
+    <!-- call buttons -->
+    <a class="call-btn call-desktop" href="tel:9843328570">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07
+                 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18
+                 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72 12.31 12.31 0 0 0 .7 2.81
+                 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27
+                 a2 2 0 0 1 2.11-.45 12.31 12.31 0 0 0 2.81.7
+                 2 2 0 0 1 1.72 2z"/>
+      </svg> (984) 332-8570
+    </a>
+
+    <a class="call-btn call-mobile" href="tel:9843328570" aria-label="Call">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07
+                 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18
+                 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72 12.31 12.31 0 0 0 .7 2.81
+                 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27
+                 a2 2 0 0 1 2.11-.45 12.31 12.31 0 0 0 2.81.7
+                 2 2 0 0 1 1.72 2z"/>
+      </svg>
+    </a>
   </div>
 
-  <!-- Services Section -->
+  <!-- ---------- SERVICES SECTION (unchanged) ---------- -->
   <section class="services">
     <h2>Our Detailing Packages</h2>
-
     <div class="service-grid">
+      <!-- cards exactly as before … -->
       <!-- Deluxe -->
       <div class="service-card">
         <img src="images/camaro2.jpeg" alt="Deluxe Detail">
@@ -192,7 +180,6 @@
           <a href="deluxe.html" class="btn">Book Now</a>
         </div>
       </div>
-
       <!-- Standard -->
       <div class="service-card">
         <img src="images/truck.jpeg" alt="Standard Detail">
@@ -209,8 +196,7 @@
           <a href="standard.html" class="btn">Book Now</a>
         </div>
       </div>
-
-      <!-- Interior Only -->
+      <!-- Interior -->
       <div class="service-card">
         <img src="images/interior.jpeg" alt="Interior Detail">
         <div class="service-card-content">
@@ -226,8 +212,7 @@
           <a href="interior.html" class="btn">Book Now</a>
         </div>
       </div>
-
-      <!-- Maintenance Plan -->
+      <!-- Maintenance -->
       <div class="service-card">
         <img src="images/maintainence.jpeg" alt="Maintenance Plan">
         <div class="service-card-content">
@@ -245,5 +230,14 @@
       </div>
     </div>
   </section>
+
+  <!-- ---------- HAMBURGER JS ---------- -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav  = document.querySelector('.nav');
+      const btn  = document.querySelector('.nav-toggle');
+      btn.addEventListener('click', () => nav.classList.toggle('open'));
+    });
+  </script>
 </body>
 </html>

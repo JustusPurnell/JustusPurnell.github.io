@@ -83,26 +83,39 @@
 }
 
 /* ---------- MOBILE DROPDOWN BEHAVIOR ---------- */
+/* ---------- MOBILE MENU & TOGGLE ---------- */
 @media (max-width:600px){
 
-  /* show hamburger */
-  .nav-toggle{display:block;}
+/* show hamburger */
+.nav-toggle{display:block;}
 
-  /* hide inline links until menu is open */
-  .nav__links{
-    display:none !important;          /* hidden by default  */
-    flex-direction:column;gap:1.25rem;
-    position:absolute;left:0;right:0;top:64px;
-    background:rgba(28,29,32,.95);
-    padding:1.5rem 2rem;text-align:center;
-  }
-
-  /* when .nav gets .open, reveal links */
-  .nav.open .nav__links{display:flex !important;}
-
-  /* nudge call icon left to avoid overlap */
-  .call-mobile{right:3.5rem;}
+/* hide inline links by default */
+.nav__links{
+  /* start hidden & above the viewport */
+  display:flex;                       /* keep flex, we'll hide via transform */
+  flex-direction:column;gap:1.25rem;
+  position:absolute;left:0;right:0;top:0;   /* now sits flush to top */
+  padding:80px 2rem 2rem;                   /* 80 = nav-bar height + spacing */
+  background:rgba(28,29,32,.95);            /* dark backdrop */
+  transform:translateY(-120%);              /* slide up & out of view */
+  opacity:0;                                /* faded */
+  transition:transform .35s ease, opacity .35s ease;
+  text-align:center;z-index:99;
 }
+
+/* when nav has .open, drop it down */
+.nav.open .nav__links{
+  transform:translateY(0);
+  opacity:1;
+}
+
+/* hide underline on mobile */
+.nav__links li a::after{display:none;}
+
+/* nudge call icon left so it doesn’t overlap hamburger */
+.call-mobile{right:3.5rem;}
+}
+
   </style>
 </head>
 
@@ -178,8 +191,10 @@
       toggle.addEventListener('click', () => {
         navBar.classList.toggle('open');
       });
-    });
+  
+    });   // ← closing ) and ; for addEventListener
   </script>
+  
   
 </body>
 </html>

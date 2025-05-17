@@ -87,7 +87,16 @@
 @media (max-width:600px){
 
 /* show hamburger */
-.nav-toggle{display:block;}
+.nav-toggle{
+  display:block;      /* keeps it visible on mobile */
+  z-index:120;        /* NEW: keeps it above the dropdown panel */
+  /* turn the three lines into an X when menu is open */
+.nav.open .nav-toggle line:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+.nav.open .nav-toggle line:nth-child(2){ opacity:0; }               /* middle line vanishes */
+.nav.open .nav-toggle line:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+.nav-toggle line{ transition:.25s ease; }                           /* smooth animation */
+
+}
 
 /* hide inline links by default */
 .nav__links{

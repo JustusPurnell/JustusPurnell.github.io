@@ -77,15 +77,31 @@
       .call-mobile{display:flex;}           /* show icon */
     }
     .nav-toggle{
-  display:none;                 /* <= this keeps it invisible on desktop */
+  display:none;
   background:none;border:none;cursor:pointer;color:#fff;
   position:absolute;right:1rem;top:50%;transform:translateY(-50%);
 }
 
-/* 2️⃣  reveal it on mobile and shift the call icon left a bit */
+/* ---------- MOBILE DROPDOWN BEHAVIOR ---------- */
 @media (max-width:600px){
-  .nav-toggle{display:block;}   /* shows the hamburger */
-  .call-mobile{right:3.5rem;}   /* prevents overlap with hamburger */
+
+  /* show hamburger */
+  .nav-toggle{display:block;}
+
+  /* hide inline links until menu is open */
+  .nav__links{
+    display:none !important;          /* hidden by default  */
+    flex-direction:column;gap:1.25rem;
+    position:absolute;left:0;right:0;top:64px;
+    background:rgba(28,29,32,.95);
+    padding:1.5rem 2rem;text-align:center;
+  }
+
+  /* when .nav gets .open, reveal links */
+  .nav.open .nav__links{display:flex !important;}
+
+  /* nudge call icon left to avoid overlap */
+  .call-mobile{right:3.5rem;}
 }
   </style>
 </head>

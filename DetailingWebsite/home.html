@@ -76,6 +76,17 @@
       .call-desktop{display:none;}          /* hide pill */
       .call-mobile{display:flex;}           /* show icon */
     }
+    .nav-toggle{
+  display:none;                 /* <= this keeps it invisible on desktop */
+  background:none;border:none;cursor:pointer;color:#fff;
+  position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+}
+
+/* 2️⃣  reveal it on mobile and shift the call icon left a bit */
+@media (max-width:600px){
+  .nav-toggle{display:block;}   /* shows the hamburger */
+  .call-mobile{right:3.5rem;}   /* prevents overlap with hamburger */
+}
   </style>
 </head>
 
@@ -85,6 +96,15 @@
       <!-- logo -->
       <a href="home.html" class="logo"><img src="images/detaillogo.png" alt="We Detail NC logo"></a>
 
+      <!-- hamburger button (will show only on mobile) -->
+  <button class="nav-toggle" aria-label="Toggle menu">
+    <svg width="28" height="28" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <line x1="3" y1="6"  x2="21" y2="6"></line>
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
       <!-- center nav links -->
       <nav>
         <ul class="nav__links">

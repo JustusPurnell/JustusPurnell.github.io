@@ -4,124 +4,77 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Charlotte Mobile Car Detailing | Ceramic Coating & Paint Protection</title>
-  <meta name="description" content="Luxury mobile car detailing, ceramic coating & paint‑protection services brought to your driveway anywhere in Charlotte, NC." />
+  <meta name="description" content="Luxury mobile car detailing, ceramic coating & paint-protection services brought to your driveway anywhere in Charlotte, NC." />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --clr-primary: #1181ff;
-      --clr-accent: #ffc400;
-      --clr-dark: #1e1f22;
-      --clr-light: #ffffff;
-      --clr-overlay: rgba(0, 0, 0, 0.66);
+    :root{
+      --clr-primary:#1181ff;
+      --clr-accent:#ffc400;
+      --clr-dark:#1e1f22;
+      --clr-light:#ffffff;
+      --clr-overlay:rgba(0,0,0,.66);
     }
+    *{margin:0;padding:0;box-sizing:border-box;}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    body{font-family:'Inter',sans-serif;background:var(--clr-dark);color:var(--clr-light);}
+    a{text-decoration:none;color:inherit;}
+
+    /* ---------- HERO ---------- */
+    header.hero{
+      background:url('images/camaro2.jpeg') center/cover no-repeat;
+      position:relative;height:100vh;display:flex;flex-direction:column;
     }
+    header.hero::before{content:"";position:absolute;inset:0;background:var(--clr-overlay);}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--clr-dark);
-      color: var(--clr-light);
+    /* ---------- NAV BAR ---------- */
+    .nav{
+      position:relative;height:64px;padding:0 2rem;
+      display:flex;align-items:center;justify-content:center;z-index:2;
     }
+    .logo{position:absolute;left:1rem;top:50%;transform:translateY(-50%);}
+    .logo img{height:120px;width:auto;}
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    .nav__links{
+      list-style:none;display:flex;gap:2.5rem;font-weight:500;font-size:1rem;letter-spacing:.8px;
     }
-
-    header.hero {
-      background: url('images/camaro2.jpeg') center/cover no-repeat;
-      position: relative;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
+    .nav__links li a{position:relative;color:#fff;transition:.3s;}
+    .nav__links li a::after{
+      content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--clr-accent);transition:.3s;
     }
+    .nav__links li a:hover::after{width:100%;}
 
-    header.hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: var(--clr-overlay);
+    /* ---------- CALL BUTTONS (shared styles) ---------- */
+    .call-btn{
+      position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+      display:flex;align-items:center;gap:.35rem;
+      border:1px solid rgba(255,255,255,.85);border-radius:40px;
+      font-weight:600;color:#fff;background:transparent;
+      transition:background .3s ease,color .3s ease;
+      backdrop-filter:blur(4px);
     }
+    .call-btn:hover{background:#fff;color:#1e1f22;}
 
-    .nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem 2rem;
-      position: relative;
-      z-index: 2;
-      background-color: transparent;
-      backdrop-filter: none;
-    }
+    /* desktop pill */
+    .call-desktop{padding:.5rem 1rem;font-size:.9rem;}
 
-    .nav__links {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 1rem;
-      letter-spacing: 0.8px;
-    }
+    /* mobile icon */
+    .call-mobile{display:none;padding:.55rem;width:46px;height:46px;justify-content:center;}
+    .call-mobile svg{margin:0;}
 
-    .nav__links li a {
-      position: relative;
-      color: white;
-      transition: color 0.3s ease;
-    }
+    /* ---------- HERO CONTENT ---------- */
+    .hero-content{text-align:center;padding:0 2rem;position:relative;z-index:1;margin:auto;}
+    .hero-content h1{font-family:'Anton',sans-serif;font-size:4rem;margin-bottom:1rem;}
+    .hero-content p {font-size:1.5rem;margin-bottom:2rem;}
 
-    .nav__links li a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 2px;
-      background: var(--clr-accent);
-      transition: width 0.3s ease;
-    }
+    .btn{background:#e63946;color:#fff;padding:.75rem 1.5rem;border:none;border-radius:5px;font-weight:bold;transition:.3s;}
+    .btn:hover{background:#ff4d4d;}
 
-    .nav__links li a:hover::after {
-      width: 100%;
-    }
-
-    .hero-content {
-      text-align: center;
-      padding: 0 2rem;
-      position: relative;
-      z-index: 1;
-      margin: auto;
-    }
-
-    .hero-content h1 {
-      font-family: 'Anton', sans-serif;
-      font-size: 4rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-content p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .btn {
-      background-color: #e63946;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #ff4d4d;
-      color: var(--clr-light);
+    /* ---------- RESPONSIVE ---------- */
+    @media(max-width:600px){
+      .logo img{height:60px;}
+      .call-desktop{display:none;}          /* hide pill */
+      .call-mobile{display:flex;}           /* show icon */
     }
   </style>
 </head>
@@ -129,15 +82,48 @@
 <body>
   <header class="hero">
     <div class="nav">
+      <!-- logo -->
+      <a href="home.html" class="logo"><img src="images/detaillogo.png" alt="We Detail NC logo"></a>
+
+      <!-- center nav links -->
       <nav>
         <ul class="nav__links">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
         </ul>
       </nav>
+
+      <!-- DESKTOP pill -->
+      <a class="call-btn call-desktop" href="tel:9843328570">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             style="vertical-align:-3px;">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07
+                   19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18
+                   2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72 12.31 12.31 0 0 0 .7 2.81
+                   2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27
+                   a2 2 0 0 1 2.11-.45 12.31 12.31 0 0 0 2.81.7
+                   2 2 0 0 1 1.72 2z"/>
+        </svg>
+        (984) 332-8570
+      </a>
+
+      <!-- MOBILE icon -->
+      <a class="call-btn call-mobile" href="tel:9843328570" aria-label="Call">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07
+                   19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18
+                   2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72 12.31 12.31 0 0 0 .7 2.81
+                   2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27
+                   a2 2 0 0 1 2.11-.45 12.31 12.31 0 0 0 2.81.7
+                   2 2 0 0 1 1.72 2z"/>
+        </svg>
+      </a>
     </div>
+
     <div class="hero-content">
       <h1>Mobile Car Detailing in Charlotte</h1>
       <p>We bring the shine to you!</p>

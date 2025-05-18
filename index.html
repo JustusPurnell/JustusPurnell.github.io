@@ -6,61 +6,71 @@
     <title>Justus Purnell | ITIS3135</title>
     <style>
 
-
+/* Header button fallback */
 header .hbtn {
     font-size: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 10px 15px;
-    text-decoration: none; /* Remove underline */
-    color: #333; /* Button text color */
-    border: 2px solid transparent; /* Transparent border for hover effect */
-    border-radius: 5px; /* Rounded corners */
-    transition: all 0.3s ease; /* Smooth hover effect */
+    text-decoration: none;
+    color: #333;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
+
+/* Button container positioning */
 .button-container {
-    margin-left: 100px; /* Moves the entire button group to the right */
-    margin-top: 40px;
+    margin-left: 100px; /* Keeps original horizontal offset */
+    margin-top: 3rem;    /* Increased vertical spacing for balance */
+    display: flex;
+    gap: 1rem;
 }
+
+/* Core button styles */
 .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 0.75rem 2rem;
     font-size: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     text-decoration: none;
     text-align: center;
-    transition: all 0.3s ease;
-    border: 2px solid #ffcc00; /* Yellow border */
+    transition: transform 150ms ease, box-shadow 150ms ease;
+    border: 2px solid #ffcc00;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
-/* Filled button (with background) */
+/* Filled button */
 .btn-filled {
-    background-color: #ffcc00; /* Yellow fill */
-    color: #fff; /* White text */
+    background-color: #ffcc00;
+    color: #fff;
+    transition: background-color 150ms ease, border-color 150ms ease;
 }
-
 .btn-filled:hover {
-    background-color: #e6b800; /* Slightly darker yellow on hover */
-    border-color: #e6b800; /* Match the hover color */
+    background-color: #e6b800;
+    border-color: #e6b800;
 }
 
-/* Outlined button (transparent background) */
+/* Outlined button */
 .btn-outlined {
     background-color: transparent;
-    color: #ffcc00; /* Yellow text */
+    color: #ffcc00;
+    transition: background-color 150ms ease, color 150ms ease;
 }
-
 .btn-outlined:hover {
-    background-color: #ffcc00; /* Yellow fill on hover */
-    color: #fff; /* White text on hover */
+    background-color: #ffcc00;
+    color: #fff;
 }
 
-
-        .bio h2{
+        .bio h2 {
             font-size: 70px;
             margin-left: 100px;
         }
-        .bio p{
+        .bio p {
             margin-left: 100px;
         }
         body {
@@ -72,12 +82,9 @@ header .hbtn {
         }
 
         header {
-
             text-align: center;
             background-color: #f5f5f5;
         }
-
-
 
         header p {
             font-size: 1.2rem;
@@ -85,18 +92,16 @@ header .hbtn {
         }
 
         main {
-    display: flex;
-    justify-content: flex-start;
-    gap: 50px; 
-    padding: 50px;
-}
-
+            display: flex;
+            justify-content: flex-start;
+            gap: 50px; 
+            padding: 50px;
+        }
 
         .bio {
             flex: 1;
             max-width: 50%;
         }
-
 
         .bio p {
             font-size: 1.2rem;
@@ -104,27 +109,27 @@ header .hbtn {
         }
 
         .headshot {
-    max-width: 26%; /* Image size */
-    border: 2px solid #ccc; /* Light gray border */
-    border-radius: 10px; /* Rounded corners */
-    margin-left: 150px; /* Positioning */
-    padding: 10px; /* Space between the image and the border */
-    background-color: #fff; /* White background box */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    display: block; /* Ensures the image behaves properly in layouts */
-    transform: translateX(100px); /* Start off-screen */
-    animation: slideIn 1s ease-out forwards; /* Animation applied */
-}
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+            max-width: 26%; /* Image size */
+            border: 2px solid #ccc; /* Light gray border */
+            border-radius: 10px; /* Rounded corners */
+            margin-left: 150px; /* Positioning */
+            padding: 10px; /* Space between the image and the border */
+            background-color: #fff; /* White background box */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            display: block; /* Ensures the image behaves properly in layouts */
+            transform: translateX(100px); /* Start off-screen */
+            animation: slideIn 1s ease-out forwards; /* Animation applied */
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
         footer {
             text-align: center;
@@ -138,57 +143,18 @@ header .hbtn {
             text-decoration: none;
             color: #333;
         }
-     /* ========= iPhone / small-phone tweaks (≤ 430 px) ========= */
+        /* Mobile tweaks */
 @media screen and (max-width: 430px) {
-    /* Give the page some breathing room */
-    body            { padding: 0 1rem; }
-
-    /* Stack content vertically & tighten gaps */
-    main            { flex-direction: column; align-items: center; gap: 1.5rem; padding: 2rem 0; }
-
-    /* ——— Image ——— */
-    .headshot       { 
-        order: -1;                 /* keep it on top */
-        max-width: 90%;            /* full-width look */
-        margin: 0 auto;            /* center */
-        padding: 6px;              /* thinner frame */
-    }
-
-    /* ——— Bio block ——— */
-    .bio            { 
-        flex: none; 
-        max-width: 100%; 
-        text-align: center;
-    }
-    .bio h2         { 
-        /* Show name again on phones (optional) */
-        display: block; 
-        font-size: 1.75rem; 
-        margin: 0.25rem 0 0.75rem; 
-    }
-    .bio p          { 
-        font-size: 1rem; 
-        margin: 0 0 1rem;
-    }
-
-    /* ——— Buttons ——— */
-    .button-container  { 
-        margin: 0 auto;            /* reset desktop margin-left */
-        display: flex; 
-        flex-wrap: wrap; 
-        justify-content: center; 
-        gap: 0.75rem;
-    }
-    .btn               { 
-        min-width: 140px; 
-        padding: 10px 15px; 
-        font-size: 0.95rem;
-    }
-
-    /* ——— Footer ——— */
-    footer p        { font-size: 0.7rem; }
+    body { padding: 0 1rem; }
+    main { flex-direction: column; align-items: center; gap: 1.5rem; padding: 2rem 0; }
+    .headshot { order: -1; max-width: 90%; margin: 0 auto; padding: 6px; }
+    .bio { flex: none; max-width: 100%; text-align: center; }
+    .bio h2 { display: block; font-size: 1.75rem; margin: 0.25rem 0 0.75rem; }
+    .bio p { font-size: 1rem; margin: 0 0 1rem; }
+    .button-container { margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+    .btn { min-width: 140px; padding: 10px 15px; font-size: 0.95rem; }
+    footer p { font-size: 0.7rem; }
 }
-
 
     </style>
 </head>
@@ -211,8 +177,8 @@ header .hbtn {
             <h2>Justus Purnell</h2>
             <p>I’m a junior at UNC Charlotte, majoring in Computer Science, with a strong interest in leveraging technology and IT solutions in the automotive industry.</p>
             <div class="button-container">
-            <a href="pdfs/JustusPurnell2025Intern.pdf" class="btn btn-filled" target="_blank">View Resume</a>
-            <a href="projects.html" class="btn btn-outlined" target="_blank">View Projects</a>
+                <a href="pdfs/JustusPurnell2025Intern.pdf" class="btn btn-filled" target="_blank">View Resume</a>
+                <a href="projects.html" class="btn btn-outlined" target="_blank">View Projects</a>
             </div>
         </div>
         <img class="headshot" src="images/image.png" alt="Justus Purnell" loading="lazy">
@@ -220,17 +186,9 @@ header .hbtn {
     </main>
 
     <footer>
-            
-        <style>
-            footer p{
-                font-size: .8rem;
-            }
-        </style>
-        
         <p>© 2024 JP Solutions. All rights reserved.</p>
-        
     </footer>
-    <script src="scripts/include.js"> </script>
+    <script src="scripts/include.js"></script>
 
 </body>
 </html>

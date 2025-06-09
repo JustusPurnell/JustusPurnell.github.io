@@ -1,53 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tattoo Supreme | Raleigh Tattoo Shop</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Client Testimonials | We Detail NC</title>
+  <meta name="description" content="See what real clients are saying about We Detail NC — mobile car detailing services in Wake Forest and Raleigh." />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --clr-primary: #1181ff;
+      --clr-accent: #ffc400;
+      --clr-dark: #1e1f22;
+      --clr-light: #ffffff;
+      --clr-overlay: rgba(0,0,0,.66);
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
     }
 
-    body, html {
-      height: 100%;
-      width: 100%;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--clr-dark);
+      color: var(--clr-light);
     }
 
-    .hero {
-      height: 100vh;
-      background: url('https://your-image-url.com/tattoo-background.jpg') no-repeat center center/cover;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .nav {
+      height: 64px;
+      padding: 0 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      color: white;
-      background-color: black; /* fallback */
       position: relative;
+      z-index: 2;
     }
 
-    .hero::before {
-      content: '';
+    .logo {
       position: absolute;
-      height: 100%;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.5); /* overlay for readability */
-      top: 0;
-      left: 0;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
-    .hero h1 {
+    .logo img {
+      height: 120px;
+      width: auto;
+    }
+
+    .nav__links {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: .8px;
+    }
+
+    .nav__links li a {
+      position: relative;
+      color: #fff;
+      transition: .3s;
+    }
+
+    .nav__links li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--clr-accent);
+      transition: .3s;
+    }
+
+    .nav__links li a:hover::after {
+      width: 100%;
+    }
+
+    .testimonials {
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .testimonials h1 {
+      font-family: 'Anton', sans-serif;
       font-size: 3rem;
-      z-index: 1;
+      margin-bottom: 2.5rem;
+    }
+
+    .testimonial-column {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      align-items: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background-color: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .testimonial-card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption {
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: var(--clr-accent);
+      background-color: rgba(255,255,255,0.02);
+    }
+
+    .text-testimonial {
+      background-color: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 100%;
+      font-size: 0.95rem;
+      color: #ddd;
+      line-height: 1.6;
+    }
+
+    .text-testimonial .client-name {
+      font-weight: 600;
+      color: var(--clr-accent);
+      text-align: right;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .logo img {
+        height: 60px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <section class="hero">
-    <h1>Launching Soon!</h1>
+
+  <div class="nav">
+    <a href="home.html" class="logo"><img src="images/detaillogo.png" alt="We Detail NC logo"></a>
+    <nav>
+      <ul class="nav__links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="testimonials">
+    <h1>Client Testimonials</h1>
+
+    <div class="testimonial-column">
+
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card">
+        <a href="images/review1.png" target="_blank">
+          <img src="images/testimonal1.png" alt="Review from Arlene Green">
+        </a>
+        <div class="caption">Words from Arlene Green</div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <a href="images/review2.png" target="_blank">
+          <img src="images/test2.png" alt="Review from John Smith">
+        </a>
+        <div class="caption">Words from John Smith</div>
+      </div>
+      <div class="text-testimonial">
+        <p>
+          “Justus Purnell the cars look great! You have outdone yourself! Thank you for getting all the pollen, leaves and blossoms off/out of the cars. Wake Forest peeps... Justus does great work for a very reasonable price. If your car needs a good clean inside and out, please contact him!”
+        </p>
+        <div class="client-name">— Rohan Rudolph</div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card">
+        <a href="images/review3.png" target="_blank">
+          <img src="images/test3.jpeg" alt="Review from Brianna L.">
+        </a>
+        <div class="caption">Words from Brianna L.</div>
+      </div>
+      <div class="text-testimonial">
+        <p>
+          “I met your son recently and he detailed my new vehicle. He is an amazing kind and hard-working young man. I was thrilled to have found him and hope to continue to use his service. Simply said — impressive!”
+        </p>
+        <div class="client-name">— Danie DePaul Pearce</div>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="testimonial-card">
+        <a href="images/review4.png" target="_blank">
+          <img src="images/test4.jpeg" alt="Review from Lisa Rems">
+        </a>
+        <div class="caption">Words from Lisa Rems</div>
+      </div>
+      <div class="text-testimonial">
+        <p>
+          “Justus—You are the best of the best! Not only do you do an amazing job on every vehicle you touch, you have the most wonderful happiness about you! Keep up the good work!”
+        </p>
+        <div class="client-name">— Lisa Rems</div>
+      </div>
+
+    </div>
   </section>
+
 </body>
 </html>

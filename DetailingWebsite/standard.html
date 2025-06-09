@@ -1,53 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tattoo Supreme | Raleigh Tattoo Shop</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deluxe Detail Booking | Charlotte Mobile Car Detailing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --clr-primary: #1181ff;
+      --clr-accent: #ffc400;
+      --clr-dark: #1e1f22;
+      --clr-light: #ffffff;
+      --clr-red: #e63946;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
     }
 
-    body, html {
-      height: 100%;
-      width: 100%;
-    }
-
-    .hero {
-      height: 100vh;
-      background: url('https://your-image-url.com/tattoo-background.jpg') no-repeat center center/cover;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--clr-dark);
+      color: var(--clr-light);
       display: flex;
-      align-items: center;
       justify-content: center;
-      text-align: center;
-      color: white;
-      background-color: black; /* fallback */
-      position: relative;
+      align-items: center;
+      height: 100vh;
+      padding: 2rem;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      height: 100%;
+    .form-container {
+      background-color: #fff;
+      color: #1e1f22;
+      border-radius: 10px;
+      padding: 2rem;
+      max-width: 420px;
       width: 100%;
-      background: rgba(0, 0, 0, 0.5); /* overlay for readability */
-      top: 0;
-      left: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      z-index: 1;
+    .form-container h2 {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-container p {
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    input, textarea, select, label {
+      width: 100%;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    input, textarea, select {
+      padding: 10px 12px;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      color: #1e1f22;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .submit-btn {
+      background-color: var(--clr-red);
+      color: white;
+      padding: 0.8rem;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #ff4d4d;
     }
   </style>
 </head>
 <body>
-  <section class="hero">
-    <h1>Launching Soon!</h1>
-  </section>
+
+  <div class="form-container">
+    <h2>Standard Detail Booking</h2>
+    <p>Fill out this form to request your appointment.</p>
+
+    <form action="https://formsubmit.co/justuspurnell1@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Deluxe Detail Booking">
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="text" name="Full Name" placeholder="Full Name" required>
+      <input type="tel" name="Phone" placeholder="Phone Number" required>
+      <input type="email" name="Email" placeholder="Email Address (optional)">
+      <input type="text" name="Vehicle" placeholder="Vehicle Make, Model & Color" required>
+      <input type="text" name="Address" placeholder="Service Address / Zip Code" required>
+
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" name="Preferred Date" required>
+
+      <label for="time">Preferred Time</label>
+      <select id="time" name="Preferred Time" required>
+        <option value="" disabled selected>Select a time</option>
+        <option value="8:00 AM">8:00 AM</option>
+        <option value="9:00 AM">9:00 AM</option>
+        <option value="10:00 AM">10:00 AM</option>
+        <option value="11:00 AM">11:00 AM</option>
+        <option value="12:00 PM">12:00 PM</option>
+        <option value="1:00 PM">1:00 PM</option>
+        <option value="2:00 PM">2:00 PM</option>
+        <option value="3:00 PM">3:00 PM</option>
+        <option value="4:00 PM">4:00 PM</option>
+        <option value="5:00 PM">5:00 PM</option>
+        <option value="6:00 PM">6:00 PM</option>
+      </select>
+
+      <textarea name="Additional Notes" placeholder="Anything else we should know?"></textarea>
+
+      <button class="submit-btn" type="submit">Submit Request</button>
+    </form>
+  </div>
+
 </body>
 </html>

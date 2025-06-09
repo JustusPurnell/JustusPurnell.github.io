@@ -85,6 +85,35 @@
       width: 100%;
     }
 
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 120;
+    }
+
+    .nav-toggle line {
+      transition: .25s ease;
+    }
+
+    .nav.open .nav-toggle line:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .nav.open .nav-toggle line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav.open .nav-toggle line:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
     .testimonials {
       padding: 5rem 2rem;
       text-align: center;
@@ -149,6 +178,35 @@
       .logo img {
         height: 60px;
       }
+
+      .nav__links {
+        flex-direction: column;
+        gap: 1.25rem;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        padding: 80px 2rem 2rem;
+        background: rgba(28,29,32,.95);
+        transform: translateY(-120%);
+        opacity: 0;
+        transition: transform .35s ease, opacity .35s ease;
+        text-align: center;
+        z-index: 99;
+      }
+
+      .nav.open .nav__links {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .nav__links li a::after {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
     }
   </style>
 </head>
@@ -157,6 +215,17 @@
 
   <div class="nav">
     <a href="home.html" class="logo"><img src="images/detaillogo.png" alt="We Detail NC logo"></a>
+
+    <!-- Hamburger Button -->
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <line x1="3" y1="6"  x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
     <nav>
       <ul class="nav__links">
         <li><a href="home.html">Home</a></li>
@@ -171,18 +240,15 @@
     <h1>Client Testimonials</h1>
 
     <div class="testimonial-column">
-
       <!-- Testimonial 1 -->
       <div class="testimonial-card">
-          <img src="images/testimonal1.png" alt="Review from Arlene Green">
-        </a>
+        <img src="images/testimonal1.png" alt="Review from Arlene Green">
         <div class="caption">Words from Arlene Green</div>
       </div>
 
       <!-- Testimonial 2 -->
       <div class="testimonial-card">
-          <img src="images/test2.png" alt="Review from John Smith">
-        </a>
+        <img src="images/test2.png" alt="Review from Rohan Rudolph">
         <div class="caption">Words from Rohan Rudolph</div>
       </div>
       <div class="text-testimonial">
@@ -194,8 +260,7 @@
 
       <!-- Testimonial 3 -->
       <div class="testimonial-card">
-          <img src="images/test3.jpeg" alt="Review from Brianna L.">
-        </a>
+        <img src="images/test3.jpeg" alt="Review from Danie Pearce">
         <div class="caption">Words from Danie Pearce</div>
       </div>
       <div class="text-testimonial">
@@ -207,8 +272,7 @@
 
       <!-- Testimonial 4 -->
       <div class="testimonial-card">
-          <img src="images/test4.jpeg" alt="Review from Lisa Rems">
-        </a>
+        <img src="images/test4.jpeg" alt="Review from Lisa Rems">
         <div class="caption">Words from Lisa Rems</div>
       </div>
       <div class="text-testimonial">
@@ -217,9 +281,19 @@
         </p>
         <div class="client-name">— Lisa Rems</div>
       </div>
-
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.nav-toggle');
+      const navBar = document.querySelector('.nav');
+
+      toggle.addEventListener('click', () => {
+        navBar.classList.toggle('open');
+      });
+    });
+  </script>
 
 </body>
 </html>
